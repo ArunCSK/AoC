@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Define constants
 BASE_URL = "https://adventofcode.com"
-YEAR = "2025"  # Update this to the current year
+YEAR = "2024"  # Update this to the current year
 SESSION_TOKEN = os.getenv("AOC_TOKEN")  # Ensure you set your token as an environment variable
 
 # Headers for authentication
@@ -38,15 +38,6 @@ def create_template(day):
 
     template_content = f"""\"\"\"
 Advent of Code {YEAR} - Day {day}
-
-Sample Input:
-(Place sample input here)
-
-Part 1:
-(Describe your approach here)
-
-Part 2:
-(Describe your approach here)
 \"\"\"
 
 def part1(input_data):

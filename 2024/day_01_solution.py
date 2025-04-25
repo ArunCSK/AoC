@@ -13,7 +13,24 @@ Part 2:
 
 def part1(input_data):
     # Your solution for Part 1
-    pass
+    left_list ,right_list = [], []
+    for line in input_data.splitlines():
+        left_list.append(int(line.split(" ")[0]))
+        right_list.append(int(line.split("  ")[1].lstrip()))
+        # print(line)
+    # print(input_data.split(" "))
+    
+    print(left_list, right_list)
+    left_sorted_list , right_sorted_list = sorted(left_list), sorted(right_list)
+    print(left_sorted_list, right_sorted_list)
+    result_list = 0
+    for i in range(len(left_sorted_list)):
+        if left_sorted_list[i] > right_sorted_list[i]:
+            result_list += left_sorted_list[i] - right_sorted_list[i]
+        else:
+            result_list += right_sorted_list[i] - left_sorted_list[i]
+    
+    return result_list
 
 def part2(input_data):
     # Your solution for Part 2
@@ -23,5 +40,5 @@ if __name__ == "__main__":
     with open("day_01_input.txt") as f:
         input_data = f.read().strip()
 
-    print("Part 1 Solution:", part1(input_data))
+    print(f"Part 1 Solution: {part1(input_data)}")
     print("Part 2 Solution:", part2(input_data))
